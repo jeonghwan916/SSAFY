@@ -1,5 +1,5 @@
-arr = [0]*4
-a,b = map(int,input().split())
-arr = [a, 0 , b, 0]
-for i in range(0, len(arr)):
-    print(f'{arr[i]}',end='')
+arr = [3, 4, 1, 5, 8, 1, 7, 7, 3, 6, 9]
+
+a = int(input())
+for i in range(0, len(arr), a):
+    print(arr[i],end=' ')
