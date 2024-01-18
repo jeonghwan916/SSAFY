@@ -1,0 +1,51 @@
+CLI (Command Line Interface) 실습 해 보자. 
+
+바탕화면 오른쪽 버튼 클릭 > git bash 열고 경로 확인
+
+~/Desktop 가 의미하는 것은 지금 현재 파일 위치가 내pc > desktop 이라는 뜻
+
+$ cd ~   (홈 디렉터리로 이동) (내pc)
+
+$ cd ~/Desktop/  (다시 바탕화면으로 이동)
+
+$ touch text.txt    (빈파일 생성)
+
+$ mkdir folder    (디렉터리 생성)
+
+$ mv text.txt folder     (text.txt를 folder 폴더 안에 넣을 때)
+
+$ touch text1.txt    (빈파일 생성)
+
+$ mv text1.txt text2.txt     (text1.txt의 이름을 text2.txt로 바꿀 때)
+
+$ mkdir folder2
+
+$ mv text2.txt folder2
+
+$ mv folder2 folder
+
+$ cd folder
+
+$ ls -a    (-a : all 옵션. 숨김 파일까지 모두 보여줍니다)
+
+$ pwd    (현재 폴더의 경로를 보여줍니다. (절대경로)
+
+$ cd ~    (홈 디렉터리로 이동후)
+
+$ cd  /c/Users/SSAFY/Desktop/folder/    (절대경로를 적어줘서 해당 디렉토리로 이동)
+
+$ cd ./folder2/ (상대경로를 적어줘서 folder2로 이동
+
+$ cd ..    (부모 디렉터리로 이동) (띄어쓰기 주의)
+
+$ cd -    (바로 이전 디렉터리로 이동) (띄어쓰기)
+
+$ cd ..
+
+$ start text.txt    (test파일 여는데 mac에서는 start 대신 open 써야 함)
+
+$ rm ./folder2/text2.txt (상대경로를 이용해서 text2파일 삭제)
+
+$ cd ..
+
+$ rm -r folder    (디렉토리 삭제)
