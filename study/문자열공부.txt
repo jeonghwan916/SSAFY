@@ -1,0 +1,192 @@
+1. 문자열 관련 메서드를 확인해 보자
+
+# 문자열 관련 함수를 해보자
+st='apple,banana,mango'
+
+#'a'가 있는곳의 인덱스 / 없으면 -1
+index=st.find('a',1) 
+print(index)
+
+#'p'가 있는곳의 인덱스 / 없으면 버그
+alpha=st.index('p')
+print(alpha)
+
+
+st='apple,banana,mango'
+# 모두 대문자 여부
+print(st.isupper()) #F   ( 문자열이 전부 대문자 인지? )
+print(st.islower()) #T
+print(st.isalpha()) #F   ( 문자열이 전부 알파벳으로만 구성되었는지? )
+
+# 문자개수 
+print(st.count('a'))
+
+# join 합치기 
+
+# 리스트 안에 문자열을 한문자열로 만들기
+# (문자열이 아니라 문자열 리스트)
+# (구분자.join(문자열리스트)) 
+
+st=['a','p','p','l','e']    
+str2="".join(st)
+# ""공백없는 것을 구분자로 문자(문자열) 합치기
+print(str2)
+
+st=['a','p','p','l','e']
+str2="*".join(st)
+print(str2)
+
+# 리스트 안에 문자를 합치는데 사이사이에 ,를 넣어라
+st=['apple','banana','mango']
+str2=','.join(st)
+print(str2)
+
+# 모두 대문자로 바꾸기
+st='apple,banana,mango'
+str2=st.upper()
+print(str2)
+str2=st.lower()
+print(str2)
+
+# 소문자로 입력받기 (대문자를 넣어도 소문자로 입력됨)
+st=input().lower().split()
+print(st)
+
+# 공백지우기
+st=' apple'
+str2=st.lstrip()
+print(st)
+print(str2)
+
+st=' apple '
+str2=st.strip()
+print(st)
+print(str2)
+
+# 교체하기
+str2=st.replace('ap','ma')
+print(str2)
+
+-------------------------------------------------------
+-------------------------------------------------------
+
+2. 리스트 관련 메서드를 확인해 보자
+
+# 리스트 값 추가하기
+st=['apple','banana','mango']
+st.append('ornage')
+print(st)
+
+# 리스트에 새로운 값을 삽입
+st.insert(1,'orange')   # st리스트 1번 인덱스에 orange 넣기
+print(st)
+
+# 리스트에 값 찾기
+a=st.index('orange')
+print(a)
+
+
+# 리스트 확장
+st=[1,2,3]
+str2=[4,5]
+st.extend(str2)
+print(st)
+
+st+=str2 # 이렇게도 가능
+print(st)
+
+# 값 삭제 (마지막요소 삭제)
+st.pop()
+print(st)
+
+# 값 삭제 (리스트 앞에서 부터 탐색하다가 첫번째로 나오는 값 삭제)
+st.remove(4)
+print(st)    
+
+# 값 삭제 (del 함수)
+del st[3:]
+print(st)
+del st[1]
+print(st)
+
+# 값 삭제 
+st.clear()
+print(st)
+
+# reverse
+st=[1,2,3,4,5]
+st.reverse()
+print(st)
+
+st=st[::-1]
+print(st)
+
+
+# sort 정렬
+a1=[6,3,9]
+
+print(a1)
+a1.sort() #반환값 없음 #오름차순 디폴트
+print(a1)
+a1.sort(reverse=True)
+print(a1)
+
+a1=[6,3,9]
+ret=sorted(a1) # 원본 데이터 유지하고 반환값 있음
+print(a1,ret)
+ret=sorted(a1,reverse=True)
+print(ret)
+
+# 리스트의 값을 sort를 통해서 정렬을 했는데
+# 문자열도 가능할까? 테스트 해보자.
+
+a1='asdf'
+# a1.sort() 동작 안함 
+
+# sort 함수는 보통 list 클래스의 메서드로 
+# list 객체에서만 사용이 가능하고, 
+
+# sorted함수는 iterable 객체들
+# 즉, 순회가 가능한 (string, tuple, list, dictionary 등)을 
+# 파라미터로 받을 수 있습니다.
+
+a1=sorted(a1) # 이것만 가능하다!!
+print(a1)
+a1=''.join(a1)
+print(a1)
+
+# lambda 를 이용한 리스트 정렬도 가능하다
+lst=list(range(10,0,-1))
+print(lst)
+
+
+# 내림차순 출력해 보기
+
+            lst=list(range(1,11))
+            
+방법 1: ret=sorted(lst,reverse=True)
+              print(ret)
+
+방법 2: ret=sorted(lst,key=lambda x:-x)
+              print(ret)
+
+# 객체 이름 = sorted(iterable객체, key=None, reverse=False)
+#                   key = 정렬기준 reverse (오름 / 내림차순)
+
+# 방법2 주의 !! 문자열에는 -적용 안됨!
+
+lst=['apple','mango','banana']
+
+# 버그!!!!
+ret=sorted(lst,key=lambda x:-x)
+print(ret)
+
+# ret=sorted(lst,reverse=True)
+# print(ret)
+
+# 언제 key를 사용하는가? 
+lst=[(3,'banana'),(2,'apple'),(1,'carrot')]
+ret=sorted(lst,key=lambda x:x[1],reverse=True)
+print(ret)
+
+-------------------------------------------------------

@@ -1,9 +1,8 @@
-arr = list(map(int,input().split()))
+def input1():
+    a, b, c = map(int,input().split())
+    return a, b, c
 
-for i in range(len(arr)):
-    if arr[i] < 5:
-        str = '불합격'
-    else:
-        str = '합격'
-    print(f'{i}번은 {arr[i]}점 {str}')
+def calc(x):
+    print(x[0] + x[1] + x[2])
 
+calc(input1())
