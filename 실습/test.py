@@ -1,16 +1,11 @@
-class Dog:
-    sound = '멍멍'
+arr=[[0]*3 for _ in range(2)]
+arr2 = list(map(int,input().split()))
+x=0
 
-class Cat:
-    sound = '야옹'
+for i in range(2):
+    for j in range(3):
+        arr[i][j] = arr2[x]
+        x+=1
 
-class Pet(Dog, Cat):
-    def __str__(self):
-        return f'애완동물은 {self.sound} 소리를 냅니다'
-  
-animal = Pet()
-print(animal)
-
-
-
+print(arr)
 

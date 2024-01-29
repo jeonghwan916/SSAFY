@@ -1,7 +1,12 @@
-lst = list("BBQWORLD")
-lst.extend(list("KFCAPPLE"))
-lst.extend(list("LOT"))
+[6, 3, 8, 1, 7, 9, 4]
+# 7개 
+# N개 정수 입력
 
-a = input()
-print(lst.count(a))
+#                 6
+#         3               8
+#     1       4       7       9
 
+# log(2)N 탐색 해야할 데이터 수
+
+
+# O(1) O(logN) O(N) O(NlogN) O(n^2)....
