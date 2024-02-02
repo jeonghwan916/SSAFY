@@ -1,12 +1,21 @@
-[6, 3, 8, 1, 7, 9, 4]
-# 7개 
-# N개 정수 입력
+T = int(input())
 
-#                 6
-#         3               8
-#     1       4       7       9
+for test_ase in range(1, T + 1):
+    bunuck = ["ZRO", "ONE", "TWO", "THR", "FOR", "FIV", "SIX", "SVN", "EGT", "NIN"]
+    bt = [0]*10
+    N = list(input().split())
 
-# log(2)N 탐색 해야할 데이터 수
+    arr = list(input().split())
+
+    for i in range(10):
+        for j in arr:
+            if bunuck[i] == j:
+                bt[i] += 1
+    print(f'{N[0]}')
+    for i in range(10):
+        if bt[i] >= 1:
+            for j in range(bt[i]):
+                print(bunuck[i], end=' ')
+    print()
 
 
-# O(1) O(logN) O(N) O(NlogN) O(n^2)....
